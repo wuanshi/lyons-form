@@ -16,11 +16,11 @@ class Item extends Component {
   getControlled = (childProps) => {
     const { name } = this.props
     return {
-      ...childProps,
       value: this.context.getFieldValue(name),
       onChange: (e) => {
         this.context.setFieldValue(name, e.target.value)
-      }
+      },
+      ...childProps,
     }
   }
 
